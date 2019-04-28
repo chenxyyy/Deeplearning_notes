@@ -12,7 +12,8 @@
   - bbox信息(w,y,w,h)为物体的中心位置相对格子位置的偏移及宽度和高度，均被归一化
   - 置信度反映是否包含物体以及包含物体情况下位置的准确性，定义为![](https://github.com/chenxyyy/Deeplearning_notes/blob/master/image/yolo/2019-03-24-10-51-43.png) 
   - 在 test 的时候，每个网格预测的 class 信息和 bounding box 预测的 confidence信息相乘，就得到每个 bounding box 的 class-specific confidence score:
-  $\operatorname{Pr}\left(\text { Class }_{i} | \text { Object }\right) * \operatorname{Pr}($ Object $) * \operatorname{IOU}_{\text { pred }}^{\text { truth }}=\operatorname{Pr}\left(\mathrm{Class}_{i}\right) * \mathrm{IOU}_{\text { pred }}^{\text { truth }}$
+ 
+ $\operatorname{Pr}\left(\text { Class }_{i} | \text { Object }\right) * \operatorname{Pr}($ Object $) * \operatorname{IOU}_{\text { pred }}^{\text { truth }}=\operatorname{Pr}\left(\mathrm{Class}_{i}\right) * \mathrm{IOU}_{\text { pred }}^{\text { truth }}$
   
 
 - Yolo V1网络结构图
@@ -114,6 +115,7 @@
 - [YOLOv3: An Incremental Improvement](https://arxiv.org/abs/1804.02767)
 - [YOLO9000: Better, Faster, Stronger](https://arxiv.org/abs/1612.08242)
 - [You Only Look Once: Unified, Real-Time Object Detection](https://arxiv.org/abs/1506.02640)
+其他
 - [YOLO主页](https://pjreddie.com/darknet/yolo/)
 - [从YOLOv1到YOLOv3，目标检测的进化之路](https://blog.csdn.net/guleileo/article/details/80581858#t1)
 
