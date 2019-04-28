@@ -14,7 +14,7 @@
   $$\mathrm{Pr}(\mathrm{Object}) * \mathrm{IOU}_{\text { pred }}^{\text { truth }}$$
   - 在 test 的时候，每个网格预测的 class 信息和 bounding box 预测的 confidence信息相乘，就得到每个 bounding box 的 class-specific confidence score:
  
- $$
+$$
 \operatorname{Pr}\left(\text { Class }_{i} | \text { Object }\right) * \operatorname{Pr}(\text { Object }) * \mathrm{IOU}_{\text { pred }}^{\text { truth }}=\operatorname{Pr}\left(\text { Class }_{i}\right) * \operatorname{IOU}_{\text { pred }}^{\text { truth }}
 $$
   
