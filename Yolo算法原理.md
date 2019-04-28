@@ -108,5 +108,13 @@
 
 
 
+## 参考资料：
+
+论文
+- [YOLOv3: An Incremental Improvement](https://arxiv.org/abs/1804.02767)
+- [YOLO9000: Better, Faster, Stronger](https://arxiv.org/abs/1612.08242)
+- [You Only Look Once: Unified, Real-Time Object Detection](https://arxiv.org/abs/1506.02640)
+- [YOLO主页](https://pjreddie.com/darknet/yolo/)
+- [从YOLOv1到YOLOv3，目标检测的进化之路](https://blog.csdn.net/guleileo/article/details/80581858#t1)
 
 
