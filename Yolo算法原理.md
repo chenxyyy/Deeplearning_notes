@@ -1,3 +1,5 @@
+$x_{t+1}=x_{t}-\alpha \nabla f\left(x_{t}\right)$
+
 ## Yolo V1算法原理介绍
 - 同时预测多个Box位置和类别
 - 端到端的目标检测和识别
