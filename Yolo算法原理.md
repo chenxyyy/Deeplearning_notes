@@ -79,7 +79,9 @@ $$
   - batch normalization
     
   - 每个box包含4个坐标值，1个置信度和classes个条件类别 
+  
     ![](./image/yolo/2019-03-24-11-36-51.png) 
+    
     ![]./image/yolo/2019-03-24-11-40-43.png)
 
 ### Yolo V3算法
