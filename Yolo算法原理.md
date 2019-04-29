@@ -13,10 +13,7 @@
   - 置信度反映是否包含物体以及包含物体情况下位置的准确性，定义为
   $$\mathrm{Pr}(\mathrm{Object}) * \mathrm{IOU}_{\text { pred }}^{\text { truth }}$$
   - 在 test 的时候，每个网格预测的 class 信息和 bounding box 预测的 confidence信息相乘，就得到每个 bounding box 的 class-specific confidence score:
- 
-$$
-\operatorname{Pr}\left(\text { Class }_{i} | \text { Object }\right) * \operatorname{Pr}(\text { Object }) * \mathrm{IOU}_{\text { pred }}^{\text { truth }}=\operatorname{Pr}\left(\text { Class }_{i}\right) * \operatorname{IOU}_{\text { pred }}^{\text { truth }}
-$$
+  ![](./image/yolo/20180606164339450.png)
   
 
 - Yolo V1网络结构图
