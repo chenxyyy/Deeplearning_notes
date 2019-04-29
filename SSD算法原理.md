@@ -32,8 +32,10 @@
 - 每个cell上生成固定scale和aspect ratio的box
   - 假设一个feature map有m×n个cell，每个ce'l'l对应k个default box，每个default box预测c个类别score和4个offset(偏移值，指x,y,w,h)
   - (c+4) * k * m *n 个输出
-- Scale：![](./image/ssd/2019-03-21-15-01-25.png)
-  - Aspect ratio：![](./image/ssd/2019-03-21-15-05-32.png)
+- Scale：
+![](./image/ssd/2019-03-21-15-01-25.png)
+  - Aspect ratio：
+  ![](./image/ssd/2019-03-21-15-05-32.png)
 ($a_{r} \in\left\{1,2,3, \frac{1}{2}, \frac{1}{3}\right\}$)<公式出不来>
   - 宽：$w_{k}^{a}=s_{k} \sqrt{a_{r}}$
   - 高：$h_{k}^{a}=s_{k} / \sqrt{a_{r}}$
