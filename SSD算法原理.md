@@ -7,7 +7,7 @@
   - 不同尺度的特征如上进行预测
   - 端到端的训练
   - 图像的分辨率比较低，也能保证检测的精度
-![](2019-03-21-11-40-39.png)
+![](./image/ssd/2019-03-21-11-40-39.png)
 
 - 主干网络：VGGNet
 - 多尺度Feature Map预测
@@ -18,12 +18,12 @@
 - VGG、ResNet、MobileNets等，各种卷积神经网络
 - 将VGG最后两个FC改为卷积，并增加4个卷积层
 
-![](2019-03-21-11-45-29.png)
+![](./image/ssd/2019-03-21-11-45-29.png)
 
 #### 多尺度Feature Map预测
 - 不同层的feature map
 - Prior box：类别概率和坐标(x,y,w,h)
-![](2019-03-21-11-48-57.png)
+![](./image/ssd/2019-03-21-11-48-57.png)
   - 不同尺度的方法通常采用pooling的方法进行下采样。
   - 对于每一个尺度的Feature map输入到相应的预测网络中 
 
@@ -32,12 +32,12 @@
 - 每个cell上生成固定scale和aspect ratio的box
   - 假设一个feature map有m×n个cell，每个ce'l'l对应k个default box，每个default box预测c个类别score和4个offset(偏移值，指x,y,w,h)
   - (c+4) * k * m *n 个输出
-- Scale：![](2019-03-21-15-01-25.png)
+- Scale：![](./image/ssd/2019-03-21-15-01-25.png)
   - Aspect ratio：
-  ![](2019-03-21-15-05-32.png)
-  - 宽：![](2019-03-21-15-07-16.png)
-  - 高：![](2019-03-21-15-08-06.png)
-  - aspect ratio = 1，增加一种scale的default box：![](2019-03-21-15-09-00.png)
+  ![](./image/ssd/2019-03-21-15-05-32.png)
+  - 宽：![](./image/ssd/2019-03-21-15-07-16.png)
+  - 高：![](./image/ssd/2019-03-21-15-08-06.png)
+  - aspect ratio = 1，增加一种scale的default box：![](./image/ssd/2019-03-21-15-09-00.png)
   - 每个feature map cell定义6种default box
   - shape数量越多，效果越好
   - 原理和Anchor基本一致
@@ -52,7 +52,7 @@
   - 从 prior box集出发，寻找与GT box满足IOU > 0.5的最大prior box放入候选正样本集
 - 负样本：
   - [x] 难例挖掘：可以使用指定的阈值照道难例。
-    -  ![](2019-03-21-15-29-32.png)
+    -  ![](./image/ssd/2019-03-21-15-29-32.png)
   - [x] 正负样本比1:3
 
 #### 数据增强
@@ -66,8 +66,8 @@
 - 分类loss + 回归loss
   - 分类loss：Softmax loss
   - 回归loss：smooth L1 loss
-  ![](2019-03-21-15-38-22.png) 
-  ![](2019-03-21-16-05-30.png)
+  ![](./image/ssd/2019-03-21-15-38-22.png) 
+  ![](./image/ssd/2019-03-21-16-05-30.png)
 
 #### 小策略
 - 数据增强对于结果的提升非常明显
@@ -77,7 +77,7 @@
   - Atrous：指空洞卷积 
 
 #### 基本框架
-![](2019-03-21-15-45-02.png)
+![](./image/ssd/2019-03-21-15-45-02.png)
 
 #### 使用细节
 - 数据增强时，需要关注Crop采样大小
@@ -94,7 +94,7 @@
  - SSD算法对小目标不够鲁棒的最主要的原因是浅层的Feature map的表征能力不够强
    - 加入上下文信息
    - 更好的基础网络(**ResNet**)和**Deconvolution**层(反卷积)，skip连接来给钱曾feature map更好的表征能力
- -  ![](2019-03-21-16-18-48.png)
+ -  ![](./image/ssd/2019-03-21-16-18-48.png)
 
 #### DSOD：
 - 2017年的ICCV2017提出
@@ -117,18 +117,18 @@
 - Stem Block优化(3个3×3卷积层和1个2×2最大池化层)
 - 6个尺度特征图进行目标检测，再融合(如何利用特征图)
 
-![](2019-03-21-16-54-11.png)
+![](./image/ssd/2019-03-21-16-54-11.png)
 
 #### FSSD设计原则
 - 借鉴FPN的思想，重构了一组pyramid feature map(金字塔特征图)，使得算法的精度有了明显的提升，速度也没有下降
   - 把网络中某些feature调整为同一size再concat，得到一个像素层，以此层为base layer来生成pyramid feature map(
   - Feature Fusion Modeule(特征融合模块)
-![](2019-03-21-16-59-53.png)
+![](./image/ssd/2019-03-21-16-59-53.png)
 
 #### RSSD设计原则
 - rainbow concatenation方式(pooling + deconvolution)融合不同层的特征，在增加不同层之间feature map关系的同时也增加了不同曾的feature mao个数
 - 这种融合方式不仅解决了传统SSD算法存在的重复框问题，同时一定程度上解决了small object的检测问题
- ![](2019-03-21-17-04-14.png)
+ ![](./image/ssd/2019-03-21-17-04-14.png)
 
 #### 应用场景
 1. 人脸检测与识别任务
@@ -136,7 +136,7 @@
 3. 通用物体检测与识别
 4. 自然场景下的文本检测与识别
 5. 等等
-6. 
+
 #### 参考：
 
 1. https://www.cnblogs.com/xuanyuyt/p/7447111.html#_label4
