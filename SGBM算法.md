@@ -30,9 +30,7 @@ Step2：用一个函数将经过水平Sobel算子处理后的图像上每个像�
 
 规划公式：
 
-$$
-\begin{array}{c}{L_{\mathrm{r}}(\mathbf{p}, d)=C(\mathbf{p}, d)+\min \left(L_{\mathbf{r}}(\mathbf{p}-\mathbf{r}, d)\right.} \\ {L_{\mathbf{r}}(\mathbf{p}-\mathbf{r}, d-1)+P_{1}, L_{\mathbf{r}}(\mathbf{p}-\mathbf{r}, d+1)+P_{1}} \\ {\min _{i} L_{\mathbf{r}}(\mathbf{p}-\mathbf{r}, i)+P_{2} )-\min _{k} L_{\mathbf{r}}(\mathbf{p}-\mathbf{r}, k)}\end{array}
-$$
+https://img-blog.csdn.net/20160709143639689?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQv/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center
 
 默认4条路径，其中动态规划很重要两个参数P1，P2是这样设定的：
 
